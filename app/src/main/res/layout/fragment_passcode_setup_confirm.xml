@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Joseph Dalughut on 13/06/2021, 11:58
+  ~ Copyright (c) 2021 . All rights reserved.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:fitsSystemWindows="false"
+    android:background="@color/white"
+    tools:context=".view.auth.login.LoginFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:title="@string/confirm_passcode"
+        app:titleTextColor="@color/grey_dark"
+        app:navigationIcon="@drawable/ic_arrow_left"
+        app:titleTextAppearance="@style/ToolbarTitleTextAppearance"
+        />
+
+    <TextView
+        android:id="@+id/txtDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="56dp"
+        android:fontFamily="@font/josefin_sans_bold"
+        android:textColor="@color/grey"
+        android:layout_marginTop="40dp"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:text="@string/setup_confirm_passcode_desc"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
+
+    <com.mukesh.OtpView
+        android:id="@+id/vwConfirmPasscode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:inputType="number"
+        android:itemBackground="@drawable/background_inputs_light_grey_rad_8dp"
+        android:textColor="@color/grey_dark"
+        app:OtpItemCount="4"
+        app:OtpItemSpacing="16dp"
+        android:gravity="center"
+        app:OtpViewType="rectangle"
+        app:OtpCursorColor="@color/agrimart_green"
+        app:OtpCursorWidth="2dp"
+        app:OtpMaskingChar="*"
+        android:imeOptions="actionDone"
+        app:OtpItemRadius="8dp"
+        app:OtpLineColor="@android:color/transparent"
+        android:fontFamily="@font/josefin_sans_bold"
+        android:textColorHint="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/txtDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="56dp"
+        android:layout_marginStart="56dp">
+
+        <requestFocus/>
+
+    </com.mukesh.OtpView>
+
+    <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_buttons"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="56dp"
+        android:text="@string/complete"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_agrimart_green"
+        app:initialCornerAngle="8dp"
+        android:textColor="@color/white"
+        app:spinning_bar_color="@color/white"
+        app:spinning_bar_padding="8dp"
+        app:spinning_bar_width="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vwConfirmPasscode"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

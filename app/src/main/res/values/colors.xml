@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="agrimart_green">#339966</color>
+    <color name="grey_dark">#2F3139</color>
+    <color name="grey_medium">#DDDDE6</color>
+    <color name="grey">#818697</color>
+    <color name="grey_light">#F4F4F8</color>
+    <color name="danger">#FF7675</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gold">#F9A602</color>
+    <color name="transparent">@android:color/transparent</color>
+
+    <color name="dark">@color/grey_dark</color>
+    <color name="background">@color/grey_light</color>
+    <color name="background_dark">@color/grey_medium</color>
+    <color name="text_hints">@color/grey</color>
+
+
+</resources>

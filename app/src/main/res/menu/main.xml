@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Created by Joseph Dalughut on 16/06/2021, 02:57
+  ~ Copyright (c) 2021 . All rights reserved.
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/home"
+        android:title="@string/home"
+        android:icon="@drawable/home_variant_outline" />
+    <item android:id="@+id/categories"
+        android:title="@string/categories"
+        android:icon="@drawable/equal" />
+    <item android:id="@+id/cart"
+        android:title="@string/notifications"
+        android:icon="@drawable/basket_outline" />
+    <item android:id="@+id/account"
+        android:title="@string/account"
+        android:icon="@drawable/account_circle_outline" />
+</menu>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Created by Joseph Dalughut on 13/06/2021, 09:01
+  ~ Copyright (c) 2021 . All rights reserved.
+  -->
+
+<resources>
+    <dimen name="width_nav_button_onboardinng">56dp</dimen>
+    <dimen name="radius_nav_btn_onboarding">8dp</dimen>
+    <dimen name="size_txt_onboarding_desc">16sp</dimen>
+    <dimen name="height_toolbar">56dp</dimen>
+    <dimen name="height_inputs">56dp</dimen>
+    <dimen name="height_dashboard_toolbar">56dp</dimen>
+    <dimen name="radius_buttons">16dp</dimen>
+    <dimen name="height_toolbar_double">116dp</dimen>
+</resources>

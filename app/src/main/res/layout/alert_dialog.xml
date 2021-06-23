@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Created by Joseph Dalughut on 13/06/2021, 14:42
+  ~ Copyright (c) 2021 . All rights reserved.
+  -->
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="56dp"
+    android:minHeight="100dp"
+    app:cardCornerRadius="8dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardElevation="24dp"
+    app:contentPadding="16dp">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnClose"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_close_circle"
+                android:tint="@color/grey_dark"
+                />
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:textAlignment="center"
+                android:textColor="@color/grey_dark"
+                android:fontFamily="@font/josefin_sans_bold"
+                android:textSize="18sp"
+                android:paddingEnd="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/onboarding_title_1"
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <ImageView
+            android:id="@+id/imgIcon"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginBottom="16dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_alert"
+            app:tint="@color/danger" />
+
+        <TextView
+            android:id="@+id/txtMessage"
+            android:textAlignment="center"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/josefin_sans_bold"
+            android:textSize="16sp"
+            android:paddingStart="24sp"
+            android:paddingEnd="24sp"
+            android:layout_marginBottom="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/onboarding_description_1"
+            />
+
+        <GridLayout
+            android:id="@+id/vwButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:useDefaultMargins="true"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnNegative"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                android:visibility="gone"
+                android:background="@drawable/popup_button_neutral"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnNeutral"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/back"
+                android:visibility="gone"
+                android:background="@drawable/popup_button_disabled"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnPositive"
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/okay"
+                />
+
+        </GridLayout>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.cardview.widget.CardView>

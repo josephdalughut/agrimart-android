@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Created by Joseph Dalughut on 13/06/2021, 09:04
+  ~ Copyright (c) 2021 . All rights reserved.
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="true"
+        android:drawable="@drawable/onboarding_nav_enabled"/>
+    <item android:state_enabled="false"
+        android:drawable="@drawable/onboarding_nav_disabled"/>
+    <item android:drawable="@drawable/onboarding_nav_disabled"/>
+</selector>

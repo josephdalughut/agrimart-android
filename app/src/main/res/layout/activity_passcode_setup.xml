@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Joseph Dalughut on 5/4/21 5:22 PM
+  ~ Copyright (c) 2021 . All rights reserved.
+  -->
+
+<androidx.fragment.app.FragmentContainerView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vwFragments"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_height="match_parent"
+    tools:context=".view.auth.AuthActivity"/>

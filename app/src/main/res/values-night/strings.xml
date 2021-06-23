@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Created by Joseph Dalughut on 13/06/2021, 10:02
+  ~ Copyright (c) 2021 . All rights reserved.
+  -->
+
+<resources>
+    <string name="onboarding_title_1">Lorem</string>
+    <string name="onboarding_description_1">Lorem ipsum dolor sit amet, consectetur   elit, sed do eiusmod tempor incididunt ut labre</string>
+    <string name="hint_auth_email">bitrus@agrimart.com</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    <string name="signup"><u>Sign up</u></string>
+    <string name="okay">Okay</string>
+    <string name="back">Back</string>
+    <string name="cancel">Cancel</string>
+    <string name="error_email_invalid">Please enter a valid email address.</string>
+    <string name="error_password_invalid">Please enter a valid password.</string>
+    <string name="registration">Registration</string>
+    <string name="hint_auth_fullname">Full Name</string>
+    <string name="fullname">Full Name</string>
+    <string name="email">Email Address</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="complete_registration">Complete Registration</string>
+    <string name="terms_and_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="terms_and_conditions_prefix">By signing-up, you agree with our</string>
+    <string name="error_fullname_invalid">Please enter a valid full name with 3 or more letters.</string>
+    <string name="error_password_short">Your password should be at least 6 characters.</string>
+    <string name="error_password_confirm_invalid">Please confirm your password.</string>
+    <string name="error_password_confirm_mismatch">Your passwords do not match.</string>
+    <string name="pasword_reset">Password Reset</string>
+    <string name="request_password_reset_desc">Please enter your account’s email address and we’ll send you a one-time password  to use in resetting your password.</string>
+    <string name="reset_password_desc">Please enter the one time password sent to <font color="#012169"><u>%1$s</u></font>, and a new password.</string>
+    <string name="submit">Submit</string>
+    <string name="lorem">Lorem Ipsum</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="change_password">Change Password</string>
+    <string name="error">Error</string>
+    <string name="error_message_generic">Something went wrong, please try again in a bit.</string>
+    <string name="error_otp_invalid">Please enter a complete 6-digit OTP code.</string>
+    <string name="password_changed">Password Changed</string>
+    <string name="password_changed_desc">Your password has been updated successfully and you can now use  your new Password to Login to  your Account</string>
+    <string name="back_to_login">Back to Login</string>
+    <string name="email_verification">Email Verification</string>
+    <string name="email_verification_desc">Please enter the one time password  sent to <font color="#012169"><u>%1$s</u></font> to verify your email address.</string>
+    <string name="verify">Verify</string>
+    <string name="resend_code">Resend Code</string>
+    <string name="email_verification_learn_more"><font color="#012169"><u>Learn more</u></font> about why we verify your email address.</string>
+    <string name="email_verification_code_resent">Your code has been resent.</string>
+    <string name="error_email_verification_code">Your verification code couldn\'t be sent, please try againi.</string>
+    <string name="email_verified">Verified!</string>
+    <string name="email_verification_success_message">Your email address has been verified successfully!</string>
+    <string name="text_continue">Continue</string>
+    <string name="setup_passcode">Setup Passcode</string>
+    <string name="setup_passcode_desc">To increase the security of your transactions, please setup a 4-digit passcode. You’ll enter this code each time you make a transaction.</string>
+    <string name="passcode_learn_more"><font color="#012169"><u>Learn more</u></font> about why you need a passcode.</string>
+    <string name="confirm_passcode">Confirm Passcode</string>
+    <string name="setup_confirm_passcode_desc">Please re-enter your passcode  to continue.</string>
+    <string name="complete">Complete</string>
+    <string name="error_passcode_invalid">Please enter a 4-digit passcode.</string>
+    <string name="error_passcode_confirmation_invalid">Please re-enter your 4-digit passcode.</string>
+    <string name="error_passcode_confirmation_mismatch">Your passcodes do not match.</string>
+    <string name="passcode_setup">Passcode Setup</string>
+    <string name="passcode_setup_message">Your 4-digit passcode has been setup successfully!</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="home">Home</string>
+    <string name="transactions">Transactions</string>
+    <string name="notifications">Notifications</string>
+    <string name="search">Search</string>
+    <string name="app_name_lowercase">agrimart</string>
+    <string name="landing_app_description">Fresh fruits and vegetables at your doorstep.</string>
+    <string name="get_started">Get Started</string>
+    <string name="password">Password</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="categories">Categories</string>
+    <string name="account">Account</string>
+    <string name="dashboard_greeting_good_morning">Good Morning</string>
+    <string name="dashboard_greeting_good_afternoon">Good Afternoon</string>
+    <string name="dashboard_greeting_good_evening">Good Evening</string>
+</resources>
