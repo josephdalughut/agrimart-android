@@ -40,15 +40,20 @@ class AndroidAccountAuthenticator(context: Context) :
         set(value) { _currentUser = value }
 
     override suspend fun loadUserAccount(): AgrimartUser? {
+        Log.d(LOG_TAG, "Loading user accounts")
         accountManager.getAccountsByType(ACCOUNT_TYPE)
             .also {
                 if (it.isEmpty()) {
+                    Log.d(LOG_TAG, "It is empty")
                     return null
                 }
                 it.first().also { account ->
+                    Log.d(LOG_TAG, "Found account: ${account.name}")
                     val data = accountManager.getUserData(account, "data")
+                    Log.d(LOG_TAG, "Data: $data")
                     Log.d(LOG_TAG, data)
                     return data.let { jsonData ->
+                        Log.d(LOG_TAG, "Making agrimart user")
                         currentUser = Gson().fromJson(jsonData, AgrimartUser::class.java)
                         currentUser
                     }
@@ -57,8 +62,13 @@ class AndroidAccountAuthenticator(context: Context) :
     }
 
     override suspend fun setUserAccount(user: AgrimartUser) {
+        Log.d(LOG_TAG, "Setting user account")
+        val data = Gson().toJson(user)
+        Log.d(LOG_TAG, "Setting user data: $data")
+
         Account(user.email, ACCOUNT_TYPE).also {
             val data = Gson().toJson(user)
+            Log.d(LOG_TAG, "Setting user data: $data")
             val dataBundle = Bundle().apply {
                 putString("data", data)
             }

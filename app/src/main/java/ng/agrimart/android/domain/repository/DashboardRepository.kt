@@ -10,6 +10,6 @@ interface DashboardRepository {
     /**
      * Fetches the data used to populate the users dashboard.
      */
-    suspend fun feed(): DashboardFeedResponse
+    suspend fun feed(page: Int?): DashboardFeedResponse
 
 }

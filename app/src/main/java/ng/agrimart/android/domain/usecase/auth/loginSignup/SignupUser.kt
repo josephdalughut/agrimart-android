@@ -21,9 +21,9 @@ class SignupUser(private val authApi: AuthApi,
             throw Exception(response.message)
         }
 
-        response.data?.agrimartUser()?.let{
+        response.user?.agrimartUser()?.let{
             authenticator.setUserAccount(it)
-        }.run {
+        }?.run {
             authenticator.setAccessToken(response.access_token)
             authenticator.setRefreshToken(response.refresh_token)
         }

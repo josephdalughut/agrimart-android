@@ -83,4 +83,10 @@
         <item name="fontFamily">@font/josefin_sans_bold</item>
     </style>
 
+    <style name="DashboardProductImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+        <item name="background">@color/transparent</item>
+    </style>
+
 </resources>

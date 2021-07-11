@@ -10,8 +10,8 @@ class DashboardDataRepository constructor(val dashboardApi: DashboardApi): Dashb
 
     val remoteDataSource: DashboardDataSource = RemoteDashboardDataSource(dashboardApi)
 
-    override suspend fun feed(): DashboardFeedResponse {
-        return remoteDataSource.feed()
+    override suspend fun feed(page: Int?): DashboardFeedResponse {
+        return remoteDataSource.feed(page)
     }
 
 }

@@ -7,6 +7,5 @@ import ng.agrimart.android.domain.model.PagedResponse
 
 data class DashboardFeedResponse(override var currentPage: Int,
                                  override var data: List<Product>,
-                                 var categories: List<Category>
-):
-    PagedResponse<List<Product>>
+                                 var categories: List<Category>?
+): PagedResponse<List<Product>>

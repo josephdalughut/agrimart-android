@@ -6,10 +6,10 @@ import ng.agrimart.android.domain.repository.DashboardRepository
 /**
  * Fetches the users home feed.
  */
-class GetFeed(val dashboardRepository: DashboardRepository) {
+class GetFeed(private val dashboardRepository: DashboardRepository) {
 
-    suspend fun execute(): DashboardFeedResponse {
-        return dashboardRepository.feed()
+    suspend fun execute(page: Int?): DashboardFeedResponse {
+        return dashboardRepository.feed(page)
     }
 
 }

@@ -20,7 +20,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object ApplicationModuleProvides {
+object ApplicationModule {
 
     @Provides
     @Singleton
@@ -37,9 +37,5 @@ object ApplicationModuleProvides {
     @Provides
     @Singleton
     fun provideAuthenticator(): Authenticator = AndroidAccountAuthenticator(AgrimartApplication.instance)
-
-    @Provides
-    @Singleton
-    fun provideAuthApi(): AuthApi = provideRetrofitHelper().getAuthApi(true)
 
 }

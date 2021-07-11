@@ -14,4 +14,8 @@
     <dimen name="height_dashboard_toolbar">70dp</dimen>
     <dimen name="radius_buttons">16dp</dimen>
     <dimen name="height_toolbar_double">116dp</dimen>
+    <dimen name="width_dashboard_category_feed_item">300dp</dimen>
+    <dimen name="radius_dashboard_category_feed_item">16dp</dimen>
+    <dimen name="height_dashboard_category_feed_item">150dp</dimen>
+    <dimen name="spacing_dashboard_product_item">16dp</dimen>
 </resources>

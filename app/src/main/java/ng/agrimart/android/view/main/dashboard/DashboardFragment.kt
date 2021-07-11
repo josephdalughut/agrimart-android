@@ -15,9 +15,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import ng.agrimart.android.databinding.FragmentDashboardBinding
 import dagger.hilt.android.AndroidEntryPoint
 import ng.agrimart.android.R
+import ng.agrimart.android.view.main.dashboard.data.DashboardFeedAdapter
 
 /**
  * A [Fragment] which represents the users Dashboard.
@@ -41,10 +43,10 @@ class DashboardFragment : Fragment() {
     lateinit var binding: FragmentDashboardBinding
     private val viewModel: DashboardViewModel by viewModels()
     private var timeChangeBroadcastReceiver: BroadcastReceiver? = null
+    private lateinit var feedAdapter: DashboardFeedAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        attachTimeBroadcastListener()
     }
 
     override fun onCreateView(
@@ -52,11 +54,14 @@ class DashboardFragment : Fragment() {
         binding = FragmentDashboardBinding.inflate(inflater)
 
         observeModel()
+        attachTimeBroadcastListener()
+        attachFeedAdapter()
+
         return binding.root
     }
 
     private fun observeModel() {
-        viewModel.timeOfDay.observe(viewLifecycleOwner, {
+        viewModel.timeOfDayData.observe(viewLifecycleOwner, {
             val greetingRes: Int = when (it) {
                 DashboardViewModel.TimeOfDay.MORNING -> R.string.dashboard_greeting_good_morning
                 DashboardViewModel.TimeOfDay.AFTERNOON -> R.string.dashboard_greeting_good_afternoon
@@ -85,6 +90,16 @@ class DashboardFragment : Fragment() {
         timeChangeBroadcastReceiver?.let {
             requireActivity().unregisterReceiver(it)
         }
+    }
+
+    private fun attachFeedAdapter() {
+        feedAdapter = DashboardFeedAdapter {
+
+        }
+        binding.vwRecycler.adapter = feedAdapter
+        viewModel.feedItemsData.observe(viewLifecycleOwner,  { page ->
+            feedAdapter.submitData(viewLifecycleOwner.lifecycle, page)
+        })
     }
 
     override fun onDestroy() {

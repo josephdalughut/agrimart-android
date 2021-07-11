@@ -62,7 +62,7 @@ data class SignupRequest(val name: String,
 /**
  * Response object for registration of a new user.
  */
-data class SignupResponse(val data: UserData?,
+data class SignupResponse(val user: UserData?,
                           override var status: String,
                           override var message: String,
                           val access_token: String,

@@ -12,7 +12,7 @@ interface DashboardDataSource {
      * Fetches a feed which is displayed on the dashboard to the user.
      * @see DashboardFeedResponse
      */
-    suspend fun feed(): DashboardFeedResponse
+    suspend fun feed(page: Int?): DashboardFeedResponse
 
 }
 
@@ -22,8 +22,8 @@ interface DashboardDataSource {
  */
 class RemoteDashboardDataSource(val dashboardApi: DashboardApi): DashboardDataSource {
 
-    override suspend fun feed(): DashboardFeedResponse {
-        return dashboardApi.feed()
+    override suspend fun feed(page: Int?): DashboardFeedResponse {
+        return dashboardApi.feed(page)
     }
 
 }

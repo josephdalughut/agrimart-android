@@ -98,4 +98,8 @@ class RetrofitApiHelper (authenticator: Authenticator) {
         return getRetrofit(authenticated).create(AuthApi::class.java)
     }
 
+    fun getDashboardApi(): DashboardApi {
+        return getRetrofit(true).create(DashboardApi::class.java)
+    }
+
 }
