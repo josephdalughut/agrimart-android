@@ -20,6 +20,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:shapeAppearanceOverlay="@style/DashboardProductImageView"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/placeholder_dashboard_product"
+            android:background="?selectableItemBackground"
             />
         
         <TextView

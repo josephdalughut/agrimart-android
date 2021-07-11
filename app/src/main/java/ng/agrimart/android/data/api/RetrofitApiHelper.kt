@@ -10,6 +10,7 @@ import com.google.gson.GsonBuilder
 import ng.agrimart.android.core.URL_API_HOST
 import ng.agrimart.android.domain.api.AuthApi
 import ng.agrimart.android.domain.auth.Authenticator
+import ng.agrimart.android.domain.model.PagedResponse
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -98,8 +99,12 @@ class RetrofitApiHelper (authenticator: Authenticator) {
         return getRetrofit(authenticated).create(AuthApi::class.java)
     }
 
-    fun getDashboardApi(): DashboardApi {
-        return getRetrofit(true).create(DashboardApi::class.java)
+    fun getProductApi(): ProductApi {
+        return getRetrofit(true).create(ProductApi::class.java)
+    }
+
+    fun getCategoryApi(): CategoryApi {
+        return getRetrofit(true).create(CategoryApi::class.java)
     }
 
 }

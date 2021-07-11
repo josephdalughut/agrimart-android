@@ -69,12 +69,18 @@
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:clipChildren="false"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/vwRecycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:paddingEnd="8dp"
             android:background="@color/white"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:orientation="vertical"

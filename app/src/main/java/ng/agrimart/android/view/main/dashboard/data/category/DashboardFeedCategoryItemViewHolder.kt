@@ -28,6 +28,7 @@ class DashboardFeedCategoryItemViewHolder(itemView: View) : RecyclerView.ViewHol
         Picasso.get().load(category.imageUrl)
             .centerCrop()
             .fit()
+            .placeholder(R.drawable.placeholder_dashboard_product)
             .into(binding.imgCover)
     }
 

@@ -4,9 +4,12 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import ng.agrimart.android.data.api.DashboardApi
-import ng.agrimart.android.data.repository.DashboardDataRepository
-import ng.agrimart.android.domain.repository.DashboardRepository
+import ng.agrimart.android.data.api.CategoryApi
+import ng.agrimart.android.data.api.ProductApi
+import ng.agrimart.android.data.repository.CategoryDataRepository
+import ng.agrimart.android.data.repository.ProductDataRepository
+import ng.agrimart.android.domain.repository.CategoryRepository
+import ng.agrimart.android.domain.repository.ProductRepository
 import javax.inject.Singleton
 
 @Module
@@ -15,6 +18,10 @@ object RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideDashboardRepository(dashboardApi: DashboardApi): DashboardRepository = DashboardDataRepository(dashboardApi)
+    fun provideDashboardRepository(productApi: ProductApi): ProductRepository = ProductDataRepository(productApi)
+
+    @Provides
+    @Singleton
+    fun provideCategoryRepository(categoryApi: CategoryApi): CategoryRepository = CategoryDataRepository(categoryApi)
 
 }

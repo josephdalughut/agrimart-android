@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.util.Consumer
 import androidx.recyclerview.widget.RecyclerView
+import me.farahani.spaceitemdecoration.SpaceItemDecoration
 import ng.agrimart.android.R
 import ng.agrimart.android.data.model.Category
 import ng.agrimart.android.databinding.ItemDashboardFeedCategoryBinding
@@ -30,6 +31,10 @@ class DashboardFeedCategoryViewHolder(itemView: View): RecyclerView.ViewHolder(i
             adapter = DashboardFeedCategoryItemAdapter(onItemClickConsumer)
         }
         binding.vwRecycler.adapter = adapter
+        binding.vwRecycler.addItemDecoration(
+            SpaceItemDecoration(itemView.resources
+            .getDimensionPixelSize(R.dimen.spacing_dashboard_product_item), true)
+        )
         adapter?.items = categories
     }
 
