@@ -11,8 +11,8 @@ import androidx.annotation.NonNull
 import androidx.lifecycle.ViewModel
 import ng.agrimart.android.domain.api.AuthApi
 import ng.agrimart.android.domain.auth.Authenticator
-import ng.agrimart.android.domain.repository.auth.SignupRequest
-import ng.agrimart.android.domain.usecase.auth.loginSignup.SignupUserUseCase
+import ng.agrimart.android.domain.model.SignupRequest
+import ng.agrimart.android.domain.usecase.auth.loginSignup.SignupUser
 import ng.agrimart.android.view.reuseable.SingleLiveEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.GlobalScope
@@ -131,8 +131,8 @@ class SignupViewModel @Inject constructor(private val authenticator: Authenticat
     private fun signupUser(@NonNull fullName: String, @NonNull email: String, @NonNull password: String) {
         events.postValue(Event.EVENT_SIGNUP_BEGAN)
 
-        val signupRequest = SignupRequest(fullName, email, password, password, "individual")
-        val useCase = SignupUserUseCase(authApi, authenticator)
+        val signupRequest = SignupRequest(fullName, email, password, password)
+        val useCase = SignupUser(authApi, authenticator)
 
         GlobalScope.launch {
             try {

@@ -60,7 +60,7 @@ class SignupPasswordFragment : Fragment() {
 
     private fun attachActions() {
         binding.btnRegister.setOnClickListener {
-            viewModel.onSubmitSignupPassword(binding.txtPassword.toString().trim(), binding.txtConfirmPassword.toString().trim())
+            viewModel.onSubmitSignupPassword(binding.txtPassword.text.toString().trim(), binding.txtConfirmPassword.text.toString().trim())
         }
         binding.btnTermsAndConditions.setOnClickListener {
             viewModel.onClickTermsAndConditionsButton()

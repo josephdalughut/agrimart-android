@@ -25,12 +25,11 @@ class SplashScreenViewModel @Inject constructor(val authenticator: Authenticator
 
     fun init() {
         GlobalScope.launch {
-            Log.d("Passcode", "${authenticator.getPasscode()}")
             authenticator.loadUserAccount()?.let {
                 navigationEvents.postValue(SplashScreenEvent.NAV_DASHBOARD)
             } ?: run {
-                authenticator.setPasscode(null)
                 authenticator.setAccessToken(null)
+                authenticator.setRefreshToken(null)
                 navigationEvents.postValue(SplashScreenEvent.NAV_ONBOARDING)
             }
         }

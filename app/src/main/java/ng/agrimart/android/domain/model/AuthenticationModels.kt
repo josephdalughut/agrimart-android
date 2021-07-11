@@ -3,9 +3,9 @@
  * Copyright (c) 2021 . All rights reserved.
  */
 
-package ng.agrimart.android.domain.repository.auth
+package ng.agrimart.android.domain.model
 
-import ng.agrimart.android.domain.model.AgrimartUser
+import ng.agrimart.android.data.model.AgrimartUser
 
 /**
  * Base response-object with the user's data.
@@ -13,30 +13,25 @@ import ng.agrimart.android.domain.model.AgrimartUser
 data class UserData(val id: Long,
                     val name: String,
                     val email: String,
-                    val phone: String?,
-                    val countryCode: String?,
                     val avatar: String?,
-                    val avatarThumb: String?,
-                    val type: String?,
-                    val emailVerified: Boolean,
-                    val address: String?) {
+                    val emailVerified: Boolean) {
 
     fun agrimartUser(): AgrimartUser {
-        return AgrimartUser(id, name, email, phone, countryCode, avatar, avatarThumb, type, emailVerified, address)
+        return AgrimartUser(id, name, email, avatar, emailVerified)
     }
 
     companion object Mock {
 
         val emailUnverified: UserData
         get() {
-            return UserData(1, "Bitrus Gyang", "bitrus.gyang@gmail.com", null,
-                null, null, null, "individual", false, null)
+            return UserData(1, "Bitrus Gyang", "bitrus.gyang@gmail.com",
+                null, false)
         }
 
         val emailVerified: UserData
             get() {
                 return UserData(1, "Bitrus Gyang", "bitrus.gyang@gmail.com", null,
-                    null, null, null, "individual", true, null)
+                     true)
             }
 
     }
@@ -62,8 +57,7 @@ interface AgrimartApiResponse {
 data class SignupRequest(val name: String,
                          val email: String,
                          val password: String,
-                         val password_confirmation: String,
-                         val type: String)
+                         val password_confirmation: String)
 
 /**
  * Response object for registration of a new user.
@@ -71,7 +65,8 @@ data class SignupRequest(val name: String,
 data class SignupResponse(val data: UserData?,
                           override var status: String,
                           override var message: String,
-                          val token: String): AgrimartApiResponse
+                          val access_token: String,
+                          val refresh_token: String): AgrimartApiResponse
 
 /**
  * Request object for logging-in an existing user.
@@ -82,10 +77,11 @@ data class LoginRequest(val email: String,
 /**
  * Response object for logging-in an existing user.
  */
-data class LoginResponse(val data: UserData?,
+data class LoginResponse(val user: UserData?,
                          override var status: String,
                          override var message: String,
-                         val token: String): AgrimartApiResponse
+                         val access_token: String,
+                         val refresh_token: String): AgrimartApiResponse
 
 /**
  * Response object from requesting an email-verification.

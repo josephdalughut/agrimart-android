@@ -11,9 +11,9 @@ import androidx.annotation.NonNull
 import androidx.lifecycle.ViewModel
 import ng.agrimart.android.domain.api.AuthApi
 import ng.agrimart.android.domain.auth.Authenticator
-import ng.agrimart.android.domain.model.AgrimartUser
-import ng.agrimart.android.domain.repository.auth.LoginRequest
-import ng.agrimart.android.domain.usecase.auth.loginSignup.LoginUserUseCase
+import ng.agrimart.android.data.model.AgrimartUser
+import ng.agrimart.android.domain.model.LoginRequest
+import ng.agrimart.android.domain.usecase.auth.loginSignup.LoginUser
 import ng.agrimart.android.view.reuseable.SingleLiveEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.GlobalScope
@@ -78,7 +78,7 @@ class LoginViewModel @Inject constructor(private val authenticator: Authenticato
         events.postValue(Event.EVENT_LOGIN_BEGAN)
 
         val loginRequest = LoginRequest(email, password)
-        val useCase = LoginUserUseCase(authApi, authenticator)
+        val useCase = LoginUser(authApi, authenticator)
 
         GlobalScope.launch {
             try {

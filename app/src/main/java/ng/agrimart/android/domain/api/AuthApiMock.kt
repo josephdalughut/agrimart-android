@@ -5,8 +5,8 @@
 
 package ng.agrimart.android.domain.api
 
-import ng.agrimart.android.domain.repository.auth.*
 import kotlinx.coroutines.delay
+import ng.agrimart.android.domain.model.*
 
 class AuthApiMock: AuthApi {
 
@@ -15,12 +15,12 @@ class AuthApiMock: AuthApi {
 
     override suspend fun login(request: LoginRequest): LoginResponse {
         delay(delayTime)
-        return LoginResponse(UserData.emailUnverified, defaultStatus, "Login Successful", "token")
+        return LoginResponse(UserData.emailUnverified, defaultStatus, "Login Successful", "token", "token")
     }
 
     override suspend fun signup(request: SignupRequest): SignupResponse {
         delay(delayTime)
-        return SignupResponse(UserData.emailUnverified, defaultStatus, "Success", "token")
+        return SignupResponse(UserData.emailUnverified, defaultStatus, "Success", "token", "token")
     }
 
     override suspend fun requestEmailVerification(): EmailVerificationCodeRequestResponse {

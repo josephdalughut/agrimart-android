@@ -3,10 +3,12 @@
  * Copyright (c) 2021 . All rights reserved.
  */
 
-package ng.agrimart.android.domain.api
+package ng.agrimart.android.data.api
 
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
+import ng.agrimart.android.core.URL_API_HOST
+import ng.agrimart.android.domain.api.AuthApi
 import ng.agrimart.android.domain.auth.Authenticator
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -22,19 +24,21 @@ import javax.net.ssl.HostnameVerifier
 class RetrofitApiHelper (authenticator: Authenticator) {
 
     companion object {
-        private const val BASE_URL = "http://3.89.138.187/api/v1/"
+        private const val BASE_URL = "$URL_API_HOST/api/"
     }
 
     private val retrofit: Retrofit by lazy {
+        val loggingInterceptor = HttpLoggingInterceptor()
+        loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
         val client = OkHttpClient.Builder()
-            .addInterceptor(HttpLoggingInterceptor())
+            .addInterceptor(loggingInterceptor)
             .hostnameVerifier(HostnameVerifier { hostname, session -> true })
             .connectTimeout(10, TimeUnit.SECONDS)
             .readTimeout(10, TimeUnit.SECONDS)
             .writeTimeout(10, TimeUnit.SECONDS)
             .build()
         Retrofit.Builder()
-            .baseUrl(Companion.BASE_URL)
+            .baseUrl(BASE_URL)
             .client(client)
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create(
@@ -47,8 +51,10 @@ class RetrofitApiHelper (authenticator: Authenticator) {
     }
 
     private val retrofitAuthenticated: Retrofit by lazy {
+        val loggingInterceptor = HttpLoggingInterceptor()
+        loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
         val client = OkHttpClient.Builder()
-            .addInterceptor(HttpLoggingInterceptor())
+            .addInterceptor(loggingInterceptor)
             .addInterceptor { chain ->
                 authenticator.getAccessToken()?.let { accessToken ->
                     val newRequest = chain.request().newBuilder()
@@ -66,7 +72,7 @@ class RetrofitApiHelper (authenticator: Authenticator) {
             .build()
         Retrofit.Builder()
             .client(client)
-            .baseUrl(Companion.BASE_URL)
+            .baseUrl(BASE_URL)
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create(
                 GsonBuilder()

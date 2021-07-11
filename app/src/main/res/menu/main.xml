@@ -6,14 +6,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/home"
         android:title="@string/home"
-        android:icon="@drawable/home_variant_outline" />
+        android:icon="@drawable/dashboard_menu_item_home" />
     <item android:id="@+id/categories"
         android:title="@string/categories"
-        android:icon="@drawable/equal" />
+        android:icon="@drawable/dashboard_menu_item_categories" />
     <item android:id="@+id/cart"
-        android:title="@string/notifications"
-        android:icon="@drawable/basket_outline" />
+        android:title="@string/cart"
+        android:icon="@drawable/dashboard_menu_item_cart" />
     <item android:id="@+id/account"
         android:title="@string/account"
-        android:icon="@drawable/account_circle_outline" />
+        android:icon="@drawable/dashboard_menu_item_account" />
 </menu>

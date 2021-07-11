@@ -11,10 +11,10 @@ import androidx.annotation.NonNull
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import ng.agrimart.android.domain.api.AuthApi
-import ng.agrimart.android.domain.repository.auth.RequestResetPasswordRequest
-import ng.agrimart.android.domain.repository.auth.ResetPasswordRequest
-import ng.agrimart.android.domain.usecase.auth.resetPassword.RequestPasswordResetUseCase
-import ng.agrimart.android.domain.usecase.auth.resetPassword.ResetPasswordUseCase
+import ng.agrimart.android.domain.model.RequestResetPasswordRequest
+import ng.agrimart.android.domain.model.ResetPasswordRequest
+import ng.agrimart.android.domain.usecase.auth.resetPassword.RequestPasswordReset
+import ng.agrimart.android.domain.usecase.auth.resetPassword.ResetPassword
 import ng.agrimart.android.view.reuseable.SingleLiveEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.GlobalScope
@@ -62,7 +62,7 @@ class PasswordResetViewModel @Inject constructor(val authApi: AuthApi)
 
         val request = RequestResetPasswordRequest(email)
         this.currentRequestPasswordResetRequest = request
-        val useCase = RequestPasswordResetUseCase(authApi)
+        val useCase = RequestPasswordReset(authApi)
 
         GlobalScope.launch {
             try {
@@ -152,7 +152,7 @@ class PasswordResetViewModel @Inject constructor(val authApi: AuthApi)
         events.postValue(Event.RESET_BEGAN)
 
         val request = ResetPasswordRequest(currentResetEmail.value!!, otp, password, password)
-        val useCase = ResetPasswordUseCase(authApi)
+        val useCase = ResetPassword(authApi)
 
         GlobalScope.launch {
             try {

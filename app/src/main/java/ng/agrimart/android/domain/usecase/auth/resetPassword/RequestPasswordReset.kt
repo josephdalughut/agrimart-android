@@ -6,13 +6,13 @@
 package ng.agrimart.android.domain.usecase.auth.resetPassword
 
 import ng.agrimart.android.domain.api.AuthApi
-import ng.agrimart.android.domain.repository.auth.RequestResetPasswordRequest
+import ng.agrimart.android.domain.model.RequestResetPasswordRequest
 import kotlin.jvm.Throws
 
 /**
  * Use-case which requests a password reset for a user.
  */
-class RequestPasswordResetUseCase(private val authApi: AuthApi) {
+class RequestPasswordReset(private val authApi: AuthApi) {
     @Throws(Exception::class)
     suspend fun execute(request: RequestResetPasswordRequest) {
         val response = authApi.requestPasswordReset(request)

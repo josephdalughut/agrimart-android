@@ -8,3 +8,4 @@ package ng.agrimart.android.core
 const val URL_TERMS_AND_CONDITIONS = "https://www.google.com"
 const val URL_LEARN_MORE_EMAIL_VERIFICATION = "https://www.google.com"
 const val URL_LEARN_MORE_PASSCODE = "https://www.google.com"
+const val URL_API_HOST = "http://192.168.0.101:8000"

@@ -3,7 +3,7 @@
  * Copyright (c) 2021 . All rights reserved.
  */
 
-package ng.agrimart.android.domain.model
+package ng.agrimart.android.data.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
@@ -15,11 +15,6 @@ import kotlinx.parcelize.Parcelize
 data class AgrimartUser(var id: Long,
                     var name: String,
                     var email: String,
-                    var phone: String?,
-                    var countryCode: String?,
                     var avatar: String?,
-                    var avatarThumb: String?,
-                    var type: String?,
-                    var emailVerified: Boolean,
-                    var address: String?
+                    var emailVerified: Boolean
 ): Parcelable

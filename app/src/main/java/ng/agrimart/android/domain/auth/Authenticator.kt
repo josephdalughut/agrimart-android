@@ -5,7 +5,7 @@
 
 package ng.agrimart.android.domain.auth
 
-import ng.agrimart.android.domain.model.AgrimartUser
+import ng.agrimart.android.data.model.AgrimartUser
 
 /**
  * Helper class for managing and authenticating the current [AgrimartUser] account for the application.
@@ -51,20 +51,14 @@ interface Authenticator {
     fun setAccessToken(token: String?)
 
     /**
-     * Fetches the users passcode.
+     * Sets the users refresh token
+     * @param token The users refresh token.
      */
-    fun getPasscode(): String?
+    fun setRefreshToken(token: String?)
 
     /**
-     * Sets the users passcode.
-     * @param passcode The users passcode.
+     * Fetches the users refresh token.
      */
-    fun setPasscode(passcode: String?)
-
-    /**
-     * Checks if the user has a valid passcode tied to their account.
-     * @return true if the user has a valid passcode.
-     */
-    fun hasValidPasscode(): Boolean
+    fun getRefreshToken(): String?
 
 }

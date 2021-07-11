@@ -7,13 +7,13 @@ package ng.agrimart.android.domain.usecase.auth.loginSignup
 
 import ng.agrimart.android.domain.api.AuthApi
 import ng.agrimart.android.domain.auth.Authenticator
-import ng.agrimart.android.domain.repository.auth.SignupRequest
+import ng.agrimart.android.domain.model.SignupRequest
 
 /**
  * Use-case which registers a user into the app.
  */
-class SignupUserUseCase(private val authApi: AuthApi,
-                        private val authenticator: Authenticator) {
+class SignupUser(private val authApi: AuthApi,
+                 private val authenticator: Authenticator) {
     suspend fun execute(request: SignupRequest) {
         val response = authApi.signup(request)
 
@@ -24,7 +24,8 @@ class SignupUserUseCase(private val authApi: AuthApi,
         response.data?.agrimartUser()?.let{
             authenticator.setUserAccount(it)
         }.run {
-            authenticator.setAccessToken(response.token)
+            authenticator.setAccessToken(response.access_token)
+            authenticator.setRefreshToken(response.refresh_token)
         }
         return
     }

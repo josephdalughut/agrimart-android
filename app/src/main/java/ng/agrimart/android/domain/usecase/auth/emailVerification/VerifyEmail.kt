@@ -7,12 +7,12 @@ package ng.agrimart.android.domain.usecase.auth.emailVerification
 
 import ng.agrimart.android.domain.api.AuthApi
 import ng.agrimart.android.domain.auth.Authenticator
-import ng.agrimart.android.domain.repository.auth.VerifyEmailRequest
+import ng.agrimart.android.domain.model.VerifyEmailRequest
 
 /**
  * Use-case which requests email-verification for a user.
  */
-class VerifyEmailUseCase(private val authApi: AuthApi, private val authenticator: Authenticator) {
+class VerifyEmail(private val authApi: AuthApi, private val authenticator: Authenticator) {
 
     @Throws(Exception::class)
     suspend fun execute(request: VerifyEmailRequest) {

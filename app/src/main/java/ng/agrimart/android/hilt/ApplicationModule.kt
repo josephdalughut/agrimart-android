@@ -9,8 +9,7 @@ import android.content.Context
 import ng.agrimart.android.core.AgrimartApplication
 import ng.agrimart.android.core.AgrimartSecureSharedPreferences
 import ng.agrimart.android.domain.api.AuthApi
-import ng.agrimart.android.domain.api.AuthApiMock
-import ng.agrimart.android.domain.api.RetrofitApiHelper
+import ng.agrimart.android.data.api.RetrofitApiHelper
 import ng.agrimart.android.domain.auth.AndroidAccountAuthenticator
 import ng.agrimart.android.domain.auth.Authenticator
 import dagger.Module
@@ -41,6 +40,6 @@ object ApplicationModuleProvides {
 
     @Provides
     @Singleton
-    fun provideAuthApi(): AuthApi = AuthApiMock()
+    fun provideAuthApi(): AuthApi = provideRetrofitHelper().getAuthApi(true)
 
 }

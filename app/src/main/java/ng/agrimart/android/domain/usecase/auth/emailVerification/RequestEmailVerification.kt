@@ -10,7 +10,8 @@ import ng.agrimart.android.domain.api.AuthApi
 /**
  * Use-case which requests email-verification for a user.
  */
-class RequestEmailVerificationUseCase(private val authApi: AuthApi) {
+class RequestEmailVerification(private val authApi: AuthApi) {
+
     @Throws(Exception::class)
     suspend fun execute() {
         val response = authApi.requestEmailVerification()

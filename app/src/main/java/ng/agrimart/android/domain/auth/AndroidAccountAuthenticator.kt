@@ -14,7 +14,7 @@ import android.os.Bundle
 import android.util.Log
 import com.google.gson.Gson
 import ng.agrimart.android.core.AgrimartSecureSharedPreferences
-import ng.agrimart.android.domain.model.AgrimartUser
+import ng.agrimart.android.data.model.AgrimartUser
 
 /**
  * An [Authenticator] backed by Android's own [AbstractAccountAuthenticator] system.
@@ -25,7 +25,7 @@ class AndroidAccountAuthenticator(context: Context) :
     companion object Constants {
         const val ACCOUNT_TYPE = "Agrimart"
         const val ACCESS_TOKEN_KEY = "access_token"
-        const val PASSCODE_KEY = "passcode"
+        const val REFRESH_TOKEN_KEY = "refresh_token"
 
         const val LOG_TAG = "AndroidAuth"
     }
@@ -100,21 +100,17 @@ class AndroidAccountAuthenticator(context: Context) :
         return
     }
 
-    override fun getPasscode(): String? {
-        return AgrimartSecureSharedPreferences.get().getString(PASSCODE_KEY, null)
-    }
-
-    override fun setPasscode(passcode: String?) {
-        passcode?.let {
-            AgrimartSecureSharedPreferences.edit().putString(PASSCODE_KEY, it).apply()
+    override fun setRefreshToken(token: String?) {
+        token?.let {
+            AgrimartSecureSharedPreferences.edit().putString(REFRESH_TOKEN_KEY, it).apply()
         } ?: run {
-            AgrimartSecureSharedPreferences.edit().remove(PASSCODE_KEY).apply()
+            AgrimartSecureSharedPreferences.edit().remove(REFRESH_TOKEN_KEY).apply()
         }
         return
     }
 
-    override fun hasValidPasscode(): Boolean {
-        return !getPasscode().isNullOrEmpty()
+    override fun getRefreshToken(): String? {
+        return AgrimartSecureSharedPreferences.get().getString(REFRESH_TOKEN_KEY, null)
     }
 
     // UNUSED

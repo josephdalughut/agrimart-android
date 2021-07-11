@@ -7,13 +7,13 @@ package ng.agrimart.android.domain.usecase.auth.loginSignup
 
 import ng.agrimart.android.domain.api.AuthApi
 import ng.agrimart.android.domain.auth.Authenticator
-import ng.agrimart.android.domain.repository.auth.LoginRequest
+import ng.agrimart.android.domain.model.LoginRequest
 
 /**
  * Use-case which logs the user into the app.
  */
-class LoginUserUseCase(private val authApi: AuthApi,
-                       private val authenticator: Authenticator
+class LoginUser(private val authApi: AuthApi,
+                private val authenticator: Authenticator
 ) {
     @Throws(Exception::class)
     suspend fun execute(request: LoginRequest) {
@@ -23,10 +23,11 @@ class LoginUserUseCase(private val authApi: AuthApi,
             throw Exception(response.message)
         }
 
-        response.data?.agrimartUser()?.let{
+        response.user?.agrimartUser()?.let{
             authenticator.setUserAccount(it)
         }.run {
-            authenticator.setAccessToken(response.token)
+            authenticator.setAccessToken(response.access_token)
+            authenticator.setRefreshToken(response.refresh_token)
         }
         return
     }
