@@ -79,4 +79,5 @@
     <string name="dashboard_greeting_good_afternoon">Good Afternoon</string>
     <string name="dashboard_greeting_good_evening">Good Evening</string>
     <string name="cart">Cart</string>
+    <string name="catalog">Catalog</string>
 </resources>

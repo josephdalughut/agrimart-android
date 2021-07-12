@@ -15,7 +15,7 @@ interface CategoryDataSource {
     /**
      * Lists the Categories available in the data-source.
      */
-    suspend fun list(page: Int?, limit: Int?): CategoryPagedResponse
+    suspend fun list(page: Int?, limit: Int?, order: String?): CategoryPagedResponse
 
 }
 
@@ -25,8 +25,8 @@ interface CategoryDataSource {
  */
 class RemoteCategoryDataSource(private val categoryApi: CategoryApi): CategoryDataSource {
 
-    override suspend fun list(page: Int?, limit: Int?): CategoryPagedResponse {
-        return categoryApi.list(page, limit)
+    override suspend fun list(page: Int?, limit: Int?, order: String?): CategoryPagedResponse {
+        return categoryApi.list(page, limit, order)
     }
 
 }

@@ -11,6 +11,6 @@ interface CategoryRepository {
     /**
      * Lists the Categories in tis repository.
      */
-    suspend fun list(page: Int?, limit: Int?): CategoryPagedResponse
+    suspend fun list(page: Int?, limit: Int?, order: String?): CategoryPagedResponse
 
 }

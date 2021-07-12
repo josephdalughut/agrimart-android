@@ -1,11 +1,10 @@
 package ng.agrimart.android.view.main.dashboard.data
 
-import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import ng.agrimart.android.domain.repository.CategoryRepository
 import ng.agrimart.android.domain.repository.ProductRepository
-import ng.agrimart.android.domain.usecase.dashboard.GetDashboardCategories
+import ng.agrimart.android.domain.usecase.dashboard.GetCategories
 import ng.agrimart.android.domain.usecase.dashboard.GetDashboardProducts
 
 /**
@@ -34,7 +33,7 @@ class DashboardFeedDataSource(private val startPage: Int = 1,
                 items.add(it)
             }
 
-            val categories = GetDashboardCategories(categoryRepository).execute(null, 5)
+            val categories = GetCategories(categoryRepository).execute(null, 5).data
             if (categories.isNotEmpty()) {
                 DashboardFeedItem(categories, DashboardFeedItem.Type.CATEGORY_LIST).also { item ->
                     items.add(item)

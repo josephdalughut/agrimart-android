@@ -8,7 +8,9 @@ import java.util.*
 interface CategoryApi {
 
     @GET("categories")
-    suspend fun list(@Query("page") page: Int?, @Query("limit") limit: Int?):
+    suspend fun list(@Query("page") page: Int?,
+                     @Query("limit") limit: Int?,
+                     @Query("order") order: String?):
             CategoryPagedResponse
 
 }

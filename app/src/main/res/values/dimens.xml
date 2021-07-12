@@ -18,4 +18,6 @@
     <dimen name="radius_dashboard_category_feed_item">16dp</dimen>
     <dimen name="height_dashboard_category_feed_item">180dp</dimen>
     <dimen name="spacing_dashboard_product_item">16dp</dimen>
+    <dimen name="height_catalog_category_item">64dp</dimen>
+    <dimen name="spacing_catalog_category">16dp</dimen>
 </resources>
