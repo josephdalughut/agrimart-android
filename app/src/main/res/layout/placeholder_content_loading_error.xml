@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/placeholderError"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/height_toolbar"
+    android:focusable="true">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grey_medium"
+        android:text="@string/somethings_not_right"
+        android:gravity="center"
+        android:fontFamily="@font/josefin_sans_bold"
+        style="@style/TextAppearance.AppCompat.Headline"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/josefin_sans_medium"
+        android:textColor="@color/grey"
+        android:layout_height="wrap_content"
+        android:text="@string/error_generic_retry_message"
+        />
+
+    <ImageButton
+        android:id="@+id/btnRefresh"
+        android:layout_width="@dimen/height_toolbar"
+        android:layout_height="@dimen/height_toolbar"
+        android:src="@drawable/refresh"
+        android:background="?attr/selectableItemBackground"
+        android:tint="@color/danger"
+        android:layout_marginTop="16dp"
+        />
+
+</LinearLayout>

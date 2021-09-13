@@ -14,7 +14,7 @@ import androidx.security.crypto.MasterKey
  */
 object AgrimartSecureSharedPreferences {
 
-    const val sharedPrefsFile = "agrimartsec"
+    const val sharedPrefsFile = "agrimartsecprefs"
     private val mainKey = MasterKey.Builder(AgrimartApplication.instance)
         .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
         .build()

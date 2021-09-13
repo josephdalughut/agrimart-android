@@ -15,7 +15,7 @@
         android:orientation="vertical"
         android:layout_height="wrap_content">
 
-        <ng.agrimart.android.view.reuseable.DashboardProductItemImageView
+        <ng.agrimart.android.view.util.DashboardProductItemImageView
             android:id="@+id/imgProduct"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

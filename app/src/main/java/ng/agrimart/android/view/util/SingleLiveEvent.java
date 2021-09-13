@@ -1,4 +1,4 @@
-package ng.agrimart.android.view.reuseable;
+package ng.agrimart.android.view.util;
 
 import android.util.Log;
 

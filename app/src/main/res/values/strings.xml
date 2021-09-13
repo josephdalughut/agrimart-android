@@ -80,4 +80,8 @@
     <string name="dashboard_greeting_good_evening">Good Evening</string>
     <string name="cart">Cart</string>
     <string name="catalog">Catalog</string>
+    <string name="somethings_not_right">Something\'s not right,</string>
+    <string name="error_generic_retry_message">We had trouble reaching Agrimart, please try that again</string>
+    <string name="no_results">No Results</string>
+    <string name="no_results_generic_message">Please try something else</string>
 </resources>

@@ -15,7 +15,7 @@ import ng.agrimart.android.domain.model.RequestResetPasswordRequest
 import ng.agrimart.android.domain.model.ResetPasswordRequest
 import ng.agrimart.android.domain.usecase.auth.resetPassword.RequestPasswordReset
 import ng.agrimart.android.domain.usecase.auth.resetPassword.ResetPassword
-import ng.agrimart.android.view.reuseable.SingleLiveEvent
+import ng.agrimart.android.view.util.SingleLiveEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

@@ -1,10 +1,8 @@
-package ng.agrimart.android.view.reuseable
+package ng.agrimart.android.view.util
 
 import android.content.Context
 import android.util.AttributeSet
-import androidx.appcompat.widget.AppCompatImageView
 import com.google.android.material.imageview.ShapeableImageView
-import java.util.jar.Attributes
 
 
 class DashboardProductItemImageView: ShapeableImageView {

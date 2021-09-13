@@ -3,7 +3,7 @@
  * Copyright (c) 2021 . All rights reserved.
  */
 
-package ng.agrimart.android.view.reuseable
+package ng.agrimart.android.view.util
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

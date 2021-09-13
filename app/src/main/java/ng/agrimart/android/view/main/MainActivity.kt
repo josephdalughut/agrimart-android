@@ -13,7 +13,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import ng.agrimart.android.databinding.ActivityMainBinding
 import ng.agrimart.android.view.main.dashboard.DashboardFragment
-import ng.agrimart.android.view.reuseable.FragmentAdapter
+import ng.agrimart.android.view.util.FragmentAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import ng.agrimart.android.R
 import ng.agrimart.android.view.main.catalog.CatalogFragment

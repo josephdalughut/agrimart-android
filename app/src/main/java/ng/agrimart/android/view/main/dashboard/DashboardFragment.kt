@@ -15,7 +15,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import ng.agrimart.android.databinding.FragmentDashboardBinding
 import dagger.hilt.android.AndroidEntryPoint
 import ng.agrimart.android.R
@@ -69,6 +68,30 @@ class DashboardFragment : Fragment() {
             }
             binding.collapsingToolbar.title = getString(greetingRes)
         })
+        viewModel.placeholderVisibility.observe(viewLifecycleOwner, {
+            when (it) {
+                DashboardViewModel.LoadingPlaceholderVisibility.LOADING_BEGAN -> {
+                    showRefreshing(true)
+                }
+                DashboardViewModel.LoadingPlaceholderVisibility.SUCCESS -> {
+                    showRefreshing(false)
+                }
+                DashboardViewModel.LoadingPlaceholderVisibility.LOADING_MORE_BEGAN -> {
+                    showRefreshing(false)
+                }
+                DashboardViewModel.LoadingPlaceholderVisibility.ERROR -> {
+                    showRefreshing(false)
+                }
+            }
+        })
+    }
+
+    private fun showRefreshing(refreshing: Boolean) {
+        if (refreshing) {
+            binding.placeholderLoading.visibility = View.VISIBLE
+        } else {
+            binding.placeholderLoading.visibility = View.INVISIBLE
+        }
     }
 
     private fun attachTimeBroadcastListener() {

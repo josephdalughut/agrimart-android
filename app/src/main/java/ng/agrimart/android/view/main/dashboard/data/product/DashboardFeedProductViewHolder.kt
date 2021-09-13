@@ -28,8 +28,14 @@ class DashboardFeedProductViewHolder(itemView: View) : RecyclerView.ViewHolder(i
             adapter = DashboardFeedProductItemAdapter(onItemClickConsumer)
         }
         binding.vwRecycler.adapter = adapter
-        binding.vwRecycler.addItemDecoration(SpaceItemDecoration(itemView.resources
-            .getDimensionPixelSize(R.dimen.spacing_dashboard_product_item), true))
+        if (binding.vwRecycler.itemDecorationCount == 0) {
+            binding.vwRecycler.addItemDecoration(
+                SpaceItemDecoration(
+                    itemView.resources
+                        .getDimensionPixelSize(R.dimen.spacing_dashboard_product_item), true
+                )
+            )
+        }
         adapter?.items = products
     }
 

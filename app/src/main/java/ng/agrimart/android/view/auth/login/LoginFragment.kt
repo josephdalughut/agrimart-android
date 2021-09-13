@@ -6,6 +6,7 @@
 package ng.agrimart.android.view.auth.login
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,8 @@ import android.view.ViewGroup
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.github.razir.progressbutton.hideProgress
+import com.github.razir.progressbutton.showProgress
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import ng.agrimart.android.R
@@ -94,15 +97,15 @@ class LoginFragment : Fragment() {
     }
 
     private fun onLoginBegan() {
-        binding.btnLogin.startAnimation()
-        binding.btnLogin.isClickable = false
+        binding.btnLogin.showProgress { progressColor = Color.WHITE }
+        binding.btnLogin.isEnabled = false
         binding.txtEmail.isEnabled = false
         binding.txtPassword.isEnabled = false
     }
 
     private fun onLoginEnded() {
-        binding.btnLogin.revertAnimation()
-        binding.btnLogin.isClickable = true
+        binding.btnLogin.hideProgress()
+        binding.btnLogin.isEnabled = true
         binding.txtEmail.isEnabled = true
         binding.txtPassword.isEnabled = true
     }

@@ -15,6 +15,8 @@ import android.view.ViewGroup
 import androidx.browser.customtabs.CustomTabColorSchemeParams
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.fragment.app.Fragment
+import com.github.razir.progressbutton.hideProgress
+import com.github.razir.progressbutton.showProgress
 import dagger.hilt.android.AndroidEntryPoint
 import ng.agrimart.android.R
 import ng.agrimart.android.core.URL_TERMS_AND_CONDITIONS
@@ -97,15 +99,15 @@ class SignupPasswordFragment : Fragment() {
     }
 
     private fun onSignupBegan() {
-        binding.btnRegister.startAnimation()
-        binding.btnRegister.isClickable = false
+        binding.btnRegister.showProgress { progressColor = Color.WHITE }
+        binding.btnRegister.isEnabled = false
         binding.txtPassword.isEnabled = false
         binding.txtConfirmPassword.isEnabled = false
     }
 
     private fun onSignupEnded() {
-        binding.btnRegister.revertAnimation()
-        binding.btnRegister.isClickable = true
+        binding.btnRegister.hideProgress()
+        binding.btnRegister.isEnabled = true
         binding.txtPassword.isEnabled = true
         binding.txtConfirmPassword.isEnabled = true
     }

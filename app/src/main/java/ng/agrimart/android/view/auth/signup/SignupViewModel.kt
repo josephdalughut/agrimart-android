@@ -13,7 +13,7 @@ import ng.agrimart.android.domain.api.AuthApi
 import ng.agrimart.android.domain.auth.Authenticator
 import ng.agrimart.android.domain.model.SignupRequest
 import ng.agrimart.android.domain.usecase.auth.loginSignup.SignupUser
-import ng.agrimart.android.view.reuseable.SingleLiveEvent
+import ng.agrimart.android.view.util.SingleLiveEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

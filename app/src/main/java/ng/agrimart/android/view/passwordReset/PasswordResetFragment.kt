@@ -5,11 +5,14 @@
 
 package ng.agrimart.android.view.passwordReset
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.github.razir.progressbutton.hideProgress
+import com.github.razir.progressbutton.showProgress
 import ng.agrimart.android.R
 import ng.agrimart.android.databinding.FragmentPasswordResetBinding
 import ng.agrimart.android.extensions.showSnackbarMessage
@@ -94,16 +97,16 @@ class PasswordResetFragment : Fragment() {
     }
 
     private fun onResetBegan() {
-        binding.btnSubmit.startAnimation()
-        binding.btnSubmit.isClickable = false
+        binding.btnSubmit.showProgress { progressColor = Color.WHITE }
+        binding.btnSubmit.isEnabled = false
         binding.vwOtp.isEnabled = false
         binding.txtPassword.isEnabled = false
         binding.txtConfirmPassword.isEnabled = false
     }
 
     private fun onResetEnded() {
-        binding.btnSubmit.revertAnimation()
-        binding.btnSubmit.isClickable = true
+        binding.btnSubmit.hideProgress()
+        binding.btnSubmit.isEnabled = true
         binding.vwOtp.isEnabled = true
         binding.txtPassword.isEnabled = true
         binding.txtConfirmPassword.isEnabled = true

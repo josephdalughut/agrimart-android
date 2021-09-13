@@ -53,7 +53,7 @@
         android:layout_marginEnd="56dp"
         android:hint="@string/fullname"
         android:singleLine="true"
-        android:inputType="textEmailAddress"
+        android:inputType="textEmailAddress|textCapWords"
         android:lines="1"
         android:imeOptions="actionNext"
         android:theme="@style/EditText.Auth">
